@@ -1,0 +1,9 @@
+services:
+    main.form.type.invitation:
+        class: MainBundle\Form\Type\InvitationType
+        tags:
+            - { name: form.type, alias: invitation }
+    mainbundle.twig.mainbundle_extension:
+       class: MainBundle\Twig\MainbundleExtension
+       tags:
+           - { name: twig.extension }

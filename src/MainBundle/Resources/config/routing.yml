@@ -1,0 +1,72 @@
+index:
+    path:     /
+    defaults: { _controller: MainBundle:Home:index }
+
+homepage:
+    path:     /home
+    defaults: { _controller: MainBundle:Home:index }
+
+confirm:
+    path:   /confirm
+    defaults: { _controller: MainBundle:Confirm:index}
+
+option:
+    path:   /option
+    defaults: { _controller: MainBundle:Option:index}
+
+invitation:
+    path:   /invitation
+    defaults: { _controller: MainBundle:Invitation:index}
+
+privacy_policy:
+    path:   /privacy_policy
+    defaults: { _controller: MainBundle:PrivacyPolicy:index}
+
+terms_of_use:
+    path:   /terms_of_use
+    defaults: { _controller: MainBundle:TermsOfUse:index}
+
+
+forgotten_password:
+    path:   /forgotten_password
+    defaults: { _controller: MainBundle:ForgottenPassword:index}
+
+admin:
+    path:     /admin
+    defaults: { _controller: MainBundle:Index:index }
+
+msl:
+    path:   /msl
+    defaults: { _controller: MainBundle:Msl:index}
+
+msl_add_edit:
+    path:   /msl_add_edit
+    defaults: { _controller: MainBundle:Msl:addEdit}
+
+msl_list:
+    path:   /msl_list
+    defaults: { _controller: MainBundle:Msl:getList}
+
+msl_get:
+    path:   /msl_get
+    defaults: { _controller: MainBundle:Msl:getMslDetails}
+
+msl_delete:
+    path:   /msl_delete
+    defaults: { _controller: MainBundle:Msl:deleteMsl}
+
+therapeutic_area_user:
+    path:   /therapeutic_area_user
+    defaults: { _controller: MainBundle:TherapeuticArea:index}
+
+therapeutic_area_add_edit:
+    path:   /therapeutic_area_add_edit
+    defaults: { _controller: MainBundle:TherapeuticArea:addEdit}
+
+therapeutic_area_list:
+    path:   /therapeutic_area_list
+    defaults: { _controller: MainBundle:TherapeuticArea:getList}
+
+admin_logout:
+    path:   /admin_logout
+    defaults: { _controller: MainBundle:Index:logout}

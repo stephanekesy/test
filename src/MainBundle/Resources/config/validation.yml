@@ -1,0 +1,29 @@
+MainBundle\Entity\Invitation:
+    properties:
+        name:
+            - NotBlank: ~
+            - Length:
+                min: 2
+                max: 50
+        email:
+            - NotBlank: ~
+            - Email :
+                checkMX: true
+        phone :
+            - NotNull: ~
+            - Length:
+                min: 8
+                max: 20
+            - Regex:
+                pattern: "/\d/"
+                message: Your phone number should contain numbers only
+        topics :
+            - NotNull: ~
+        availabilityDetails:
+            - NotNull: ~
+        question:
+            - NotBlank: ~
+            - Length:
+                min: 2
+                max: 400
+

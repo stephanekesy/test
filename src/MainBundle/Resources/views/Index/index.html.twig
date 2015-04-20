@@ -1,0 +1,43 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block title %}
+Login | Dandelion
+{% endblock %}
+
+{% block modulestylesheets %}
+<link href="{{ asset('bundles/main/css/login.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+	<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+		<section id="panel">
+			<div class="panel">
+				<div class="panel-form-first-part"></div>
+				<div class="panel-form-second-part">
+					<h2 class="title-login">Please enter your username & password to enter the administration tool.</h2>
+					{% if s_error is not empty %}
+						<div class="login-alert-msg">
+							<div class="alert alert-warning modal-body-label">
+								<a aria-hidden="true" data-dismiss="alert" href="#" class="close"></a>
+								<span class="response logn-response-msg">{{s_error}}</span>
+							</div>
+						</div>
+					{% endif %}	
+					<form name="frm_login" id="frm_login" method="post" action="" role="form">
+						<div class="form-group input-group">
+							<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+							<input type="text" name="txt_username" id="txt_username" value="{{s_username}}" class="form-control input-lg" placeholder="Username">
+						</div>
+						<div class="form-group input-group">
+							<span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+							<input type="password" name="txt_password" id="txt_password" value="" class="form-control input-lg" placeholder="Password">
+						</div>
+						<div class="button-group text-right" title="CONNECT">
+							<button type="submit" name="btn_login_submit" id="btn_login_submit" class="btn btn-primary btn-lg common-button">Connect</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+	</div>	
+{% endblock %}

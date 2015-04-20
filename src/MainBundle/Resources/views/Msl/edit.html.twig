@@ -1,0 +1,64 @@
+<div class="row">
+	<div class="col-xs-3">
+			<span class="required-field">*</span>
+			<label class="control-label modal-title-body-label">First Name</label>
+			<input type="text" name="txt_edit_first_name" id="txt_edit_first_name" value="{{ msl.firstName() }}" class="form-control input-lg" placeholder="First Name" maxlength="32">
+	</div>
+	<div class="col-xs-3">
+			<span class="required-field">*</span>
+			<label class="control-label modal-title-body-label">Last Name</label>
+			<input type="text" name="txt_edit_last_name" id="txt_edit_last_name" value="{{ msl.lastName() }}" class="form-control input-lg" placeholder="Last Name" maxlength="32">
+	</div>
+	<div class="col-xs-5">
+			<span class="required-field">*</span>	
+			<label class="control-label modal-title-body-label">Email</label>
+			<input type="text" name="txt_edit_email" id="txt_edit_email" value="{{ msl.email() }}" class="form-control input-lg" placeholder="Email" maxlength="32">
+	</div>
+</div>
+<div class="row-gap"></div>
+<div class="row">
+	<div class="col-xs-3">
+			<span class="required-field">*</span>
+			<label class="control-label modal-title-body-label">Gender</label>
+			<select name="slt_edit_gender" id="slt_edit_gender" class="form-control">
+				{% for s_gender in gender %} 
+					<option value="{{s_gender}}" {% if (msl.gender() == s_gender) %} selected {% endif %}>{{s_gender}}</option>
+				{% endfor %}
+			</select>
+	</div>
+	<div class="col-xs-3">
+			<span class="required-field">*</span>	
+			<label class="control-label modal-title-body-label">Role</label>
+			<select name="slt_edit_role" id="slt_edit_role" class="form-control">
+				{% for msl_role_row in msl_role %} 
+					<option value="{{msl_role_row.name}}" {% if (msl.role() == msl_role_row.name) %} selected {% endif %}>{{msl_role_row.name}}</option>
+				{% endfor %}
+			</select>
+	</div>
+	<div class="col-xs-6 padding-right-0px">
+	</div>
+</div>
+<div class="row-gap"></div>
+<label class="control-label modal-title-body-label">User Territories</label>
+<div class="row">
+	<div class="col-xs-6">
+			<input type="text" name="txt_edit_territory_name" id="txt_edit_territory_name" value="{{ msl.mslTerritory() }}" class="form-control input-lg" placeholder="User Territories" maxlength="64">
+	</div>
+	<div class="col-xs-6">
+	</div>
+</div>
+
+<div class="row-gap"></div>
+<label class="control-label modal-title-body-label">Therapeutical Areas Assigning</label>
+<div class="row">
+	<div class="col-xs-12">
+		{% for therapeutic_area_row in therapeutic_area %} 
+			<div class="col-xs-4">
+				<label class="checkbox-inline">
+					<input type="checkbox" name="chk_therapeutic_area[]" value="{{therapeutic_area_row.id}}" {% if a_user_therapeutic_area | checkinarray(therapeutic_area_row.id) %} checked {% endif %}> <label class="text-checkbox">{{therapeutic_area_row.name}}</label>
+				</label>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<input type="hidden" name="hid_msl_id" id="hid_msl_id" value="{{ msl.id() }}">
